@@ -27,24 +27,24 @@ int main()
     client.armDisarm(true);
 
 
-    std::string ip_address = "127.0.0.1"; 
-    uint16_t port = 50502;                 
-    float timeout_sec = 5.0f;             
+    // std::string ip_address = "127.0.0.1"; 
+    // uint16_t port = 50502;                 
+    // float timeout_sec = 5.0f;             
 
-    msr::airlib::easyTrackRpcClient client_easy(ip_address, port,timeout_sec);
+    // msr::airlib::easyTrackRpcClient client_easy(ip_address, port,timeout_sec);
 
-    try {
-        int32_t player_index = 1;
-        msr::airlib::Vector3r position = client_easy.getPlayerPosition(player_index);
+    // try {
+    //     int32_t player_index = 1;
+    //     msr::airlib::Vector3r position = client_easy.getPlayerPosition(player_index);
 
-        std::cout << "Player Position: " 
-                  << "X: " << position.x() 
-                  << " Y: " << position.y() 
-                  << " Z: " << position.z() << std::endl;
-    }
-    catch (const std::exception& e) {
-        std::cerr << "Error: " << e.what() << std::endl;
-    }
+    //     std::cout << "Player Position: " 
+    //               << "X: " << position.x() 
+    //               << " Y: " << position.y() 
+    //               << " Z: " << position.z() << std::endl;
+    // }
+    // catch (const std::exception& e) {
+    //     std::cerr << "Error: " << e.what() << std::endl;
+    // }
 
 
     return 0;
