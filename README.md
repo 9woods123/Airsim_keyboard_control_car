@@ -16,9 +16,20 @@ Run build.cmd from the command line. This will create ready to use plugin bits i
 
 
 ### Linux
-[![Build Status](https://github.com/microsoft/AirSim/actions/workflows/test_ubuntu.yml/badge.svg)](https://github.com/microsoft/AirSim/actions/workflows/test_ubuntu.yml)
-* [Download binaries](https://github.com/Microsoft/AirSim/releases)
-* [Build it](https://microsoft.github.io/AirSim/build_linux)
+The current recommended and tested environment is Ubuntu 18.04 LTS. Theoretically, you can build on other distros as well, but we haven't tested it.
+We've two options - you can either build inside docker containers or your host machine.
+
+Build Unreal Engine#
+Make sure you are registered with Epic Games. This is required to get source code access for Unreal Engine.
+
+Clone Unreal in your favorite folder and build it (this may take a while!). Note: We only support Unreal >= 4.27 at present. We recommend using 4.27.
+
+# go to the folder where you clone GitHub projects
+git clone -b 4.27 git@github.com:EpicGames/UnrealEngine.git
+cd UnrealEngine
+./Setup.sh
+./GenerateProjectFiles.sh
+make
 
 ### macOS
 [![Build Status](https://github.com/microsoft/AirSim/actions/workflows/test_macos.yml/badge.svg)](https://github.com/microsoft/AirSim/actions/workflows/test_macos.yml)
