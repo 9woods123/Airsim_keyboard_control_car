@@ -61,6 +61,27 @@ To package the simulation software for Linux, you need to convert the `.uproject
 
 8. If you want to use this plugin, copy the `Plugins` folder to the directory at the same level as the `Content` folder within your project.**After opening the `.uproject`, create a new C++ file (this will trigger UE4 to recompile the Plugins during the packaging process)** . Since the necessary dynamic link libraries have been added to the Plugins folder, packaging should proceed without issues.
 
+# Using 
 
+The drone will be designated as Player 0, and the vehicle will be designated as Player 1 (based on the numbering in UE games). You can use all the features of AirSim, and the vehicle can be controlled via the keyboard. The vehicle’s coordinates can be obtained through RPC communication. Additionally, we have written a ROS node to relay the vehicle’s odometry.
+   ```
+#include "easytrack/easyTrackRpcClient.hpp"
+    std::string ip_address = "127.0.0.1"; 
+    uint16_t port = 50502;                 
+    float timeout_sec = 5.0f;             
 
+    msr::airlib::easyTrackRpcClient client_easy(ip_address, port,timeout_sec);
 
+    try {
+        int32_t player_index = 1;
+        msr::airlib::Vector3r position = client_easy.getPlayerPosition(player_index);
+
+        std::cout << "Player Position: " 
+                  << "X: " << position.x() 
+                  << " Y: " << position.y() 
+                  << " Z: " << position.z() << std::endl;
+    }
+    catch (const std::exception& e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+   ```
