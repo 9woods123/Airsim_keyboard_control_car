@@ -4,9 +4,16 @@ This project is based on [AirSim](https://microsoft.github.io/AirSim/), a popula
 
 ## How to Get It
 ### Windows
-[![Build Status](https://github.com/microsoft/AirSim/actions/workflows/test_windows.yml/badge.svg)](https://github.com/microsoft/AirSim/actions/workflows/test_windows.yml)
-* [Download binaries](https://github.com/Microsoft/AirSim/releases)
-* [Build it](https://microsoft.github.io/AirSim/build_windows)
+
+Build AirSim#
+Install Visual Studio 2022. Make sure to select Desktop Development with C++ and Windows 10 SDK 10.0.19041 (should be selected by default) and select the latest .NET Framework SDK under the 'Individual Components' tab while installing VS 2022.
+Start Developer Command Prompt for VS 2022.
+Clone the repo: git clone https://github.com/9woods123/simulator.git, and go the AirSim directory by cd AirSim.
+
+Note: It's generally not a good idea to install AirSim in C drive. This can cause scripts to fail, and requires running VS in Admin mode. Instead clone in a different drive such as D or E.
+
+Run build.cmd from the command line. This will create ready to use plugin bits in the Unreal\Plugins folder that can be dropped into any Unreal project.
+
 
 ### Linux
 [![Build Status](https://github.com/microsoft/AirSim/actions/workflows/test_ubuntu.yml/badge.svg)](https://github.com/microsoft/AirSim/actions/workflows/test_ubuntu.yml)
