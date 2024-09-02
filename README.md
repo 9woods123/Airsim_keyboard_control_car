@@ -1,24 +1,6 @@
-## AirSim announcement: This repository will be archived in the coming year 
-
-In 2017 Microsoft Research created AirSim as a simulation platform for AI research and experimentation. Over the span of five years, this research project has served its purpose—and gained a lot of ground—as a common way to share research code and test new ideas around aerial AI development and simulation. Additionally, time has yielded advancements in the way we apply technology to the real world, particularly through aerial mobility and autonomous systems. For example, drone delivery is no longer a sci-fi storyline—it’s a business reality, which means there are new needs to be met. We’ve learned a lot in the process, and we want to thank this community for your engagement along the way. 
-
-In the spirit of forward momentum, we will be releasing a new simulation platform in the coming year and subsequently archiving the original 2017 AirSim. Users will still have access to the original AirSim code beyond that point, but no further updates will be made, effective immediately. Instead, we will focus our efforts on a new product, Microsoft Project AirSim, to meet the growing needs of the aerospace industry. Project AirSim will provide an end-to-end platform for safely developing and testing aerial autonomy through simulation. Users will benefit from the safety, code review, testing, advanced simulation, and AI capabilities that are uniquely available in a commercial product. As we get closer to the release of Project AirSim, there will be learning tools and features available to help you migrate to the new platform and to guide you through the product. To learn more about building aerial autonomy with the new Project AirSim, visit [https://aka.ms/projectairsim](https://aka.ms/projectairsim).
-
 # Welcome to AirSim
 
-AirSim is a simulator for drones, cars and more, built on [Unreal Engine](https://www.unrealengine.com/) (we now also have an experimental [Unity](https://unity3d.com/) release). It is open-source, cross platform, and supports software-in-the-loop simulation with popular flight controllers such as PX4 & ArduPilot and hardware-in-loop with PX4 for physically and visually realistic simulations. It is developed as an Unreal plugin that can simply be dropped into any Unreal environment. Similarly, we have an experimental release for a Unity plugin.
-
-Our goal is to develop AirSim as a platform for AI research to experiment with deep learning, computer vision and reinforcement learning algorithms for autonomous vehicles. For this purpose, AirSim also exposes APIs to retrieve data and control vehicles in a platform independent way.
-
-**Check out the quick 1.5 minute demo**
-
-Drones in AirSim
-
-[![AirSim Drone Demo Video](docs/images/demo_video.png)](https://youtu.be/-WfTr1-OBGQ)
-
-Cars in AirSim
-
-[![AirSim Car Demo Video](docs/images/car_demo_video.png)](https://youtu.be/gnz1X3UNM5Y)
+This project is based on AirSim [Airsim](https://microsoft.github.io/AirSim/), a popular drone simulation platform. The project is developed as a UE4 plugin, creating a GameMode to load the simulation game. However, Microsoft did not provide a simulation with both a car and an aircraft simultaneously. To better adapt to the simulation of target tracking algorithms, we conducted secondary development to create a multiplayer game that allows for simultaneous control of both aircraft and car models.
 
 
 ## How to Get It
