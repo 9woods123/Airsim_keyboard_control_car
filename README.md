@@ -14,6 +14,52 @@ Note: It's generally not a good idea to install AirSim in C drive. This can caus
 
 Run build.cmd from the command line. This will create ready to use plugin bits in the Unreal\Plugins folder that can be dropped into any Unreal project.
 
+## Build Project to Linux Platform
+
+To package the simulation software for Linux, you need to convert the `.uproject` into a C++ project and then recompile it on Linux with the AirSim Plugin, including the dynamic link libraries `libxxx.a`, to achieve cross-compilation. The main logic is to maintain the UE4 Windows project while copying the `libAirLib.a`, `libMavLinkCom.a`, and `librpc.a` files to the appropriate locations since they are required during the UE4 packaging process.
+
+1. Install WSL with the following command:
+   ```
+   wsl --install -d Ubuntu-18.04
+   ```
+   Then, restart your machine.
+
+2. After rebooting, execute the command again to create a new user account:
+   ```
+   wsl --install -d Ubuntu-18.04
+   ```
+
+3. Once inside the Ubuntu subsystem, run:
+   ```bash
+   sudo apt-get update
+   sudo apt-get install dos2unix
+   cd Airsim/ && dos2unix build.sh && dos2unix setup.sh
+   cd Unreal/Environments/Blocks/ && dos2unix clean.sh
+   ```
+   This converts all necessary files.
+
+4. In the **Windows Developer Command Prompt for VS 2022**, navigate to the AirSim directory and build the project:
+   ```cmd
+   cd Airsim/ && build.cmd
+   ```
+   This will generate a `Block.uproject` that can be opened on Windows. Open the `.uproject` file to let UE4 recompile `Block.uproject`.
+
+5. Return to the AirSim directory and set up the Linux environment:
+   ```bash
+   ./setup.sh  # Install dependencies for compiling AirSim on Linux
+   ./build.sh  # Compile AirSim; this will create an AirSim uproject for Ubuntu
+   ```
+
+6. However, since you need to handle the `Block.uproject` on Windows, Linux compilation alone isn’t sufficient. The purpose of compiling AirSim on Linux is to obtain a few essential dynamic link libraries (executing `build.sh` will copy some libraries directly to the `AirSim/Unreal/Plugins/AirSim/Source/AirLib/lib` directory). At this point, the `block.uproject` is still configured for Linux.
+
+7. Therefore, re-run:
+   ```cmd
+   cd Airsim/ && build.cmd
+   ```
+   Open `Block.uproject` to let UE4 recompile it again on Windows. Then, copy `libMavLinkCom.a` to the `Block/Plugins/AirSim/Source/AirLib/deps/MavLinkCom/lib` directory.
+
+8. If you want to use this plugin, copy the `Plugins` folder to the directory at the same level as the `Content` folder within your project. After opening the `.uproject`, create a new C++ file (this will trigger UE4 to recompile the Plugins during the packaging process). Since the necessary dynamic link libraries have been added to the Plugins folder, packaging should proceed without issues.
+
 
 ### Linux
 The current recommended and tested environment is Ubuntu 18.04 LTS. Theoretically, you can build on other distros as well, but we haven't tested it.
@@ -24,6 +70,7 @@ Make sure you are registered with Epic Games. This is required to get source cod
 
 Clone Unreal in your favorite folder and build it (this may take a while!). Note: We only support Unreal >= 4.27 at present. We recommend using 4.27.
 
+# use ./build.sh --debug to build in debug mode
 # go to the folder where you clone GitHub projects
 git clone -b 4.27 git@github.com:EpicGames/UnrealEngine.git
 cd UnrealEngine
@@ -31,11 +78,17 @@ cd UnrealEngine
 ./GenerateProjectFiles.sh
 make
 
-### macOS
-[![Build Status](https://github.com/microsoft/AirSim/actions/workflows/test_macos.yml/badge.svg)](https://github.com/microsoft/AirSim/actions/workflows/test_macos.yml)
-* [Build it](https://microsoft.github.io/AirSim/build_macos)
+Build AirSim#
+Clone AirSim and build it:
+# go to the folder where you clone GitHub projects
+git clone https://github.com/Microsoft/AirSim.git
+cd AirSim
+By default AirSim uses clang 8 to build for compatibility with UE 4.27. The setup script will install the right version of cmake, llvm, and eigen.
 
-For more details, see the [use precompiled binaries](docs/use_precompiled.md) document. 
+./setup.sh
+./build.sh
+
+
 
 ## How to Use It
 
