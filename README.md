@@ -6,7 +6,7 @@ This project is based on [AirSim](https://microsoft.github.io/AirSim/), a popula
 
 ### Windows
 
-Build AirSim#
+#### Build AirSim
 Install Visual Studio 2022. Make sure to select Desktop Development with C++ and Windows 10 SDK 10.0.19041 (should be selected by default) and select the latest .NET Framework SDK under the 'Individual Components' tab while installing VS 2022.
 Start Developer Command Prompt for VS 2022.
 Clone the repo: git clone https://github.com/9woods123/simulator.git, and go the AirSim directory by cd AirSim.
@@ -15,7 +15,7 @@ Note: It's generally not a good idea to install AirSim in C drive. This can caus
 
 Run build.cmd from the command line. This will create ready to use plugin bits in the Unreal\Plugins folder that can be dropped into any Unreal project.
 
-## Build Project to Linux Platform
+### Build Project to Linux Platform
 
 To package the simulation software for Linux, you need to convert the `.uproject` into a C++ project and then recompile it on Linux with the AirSim Plugin, including the dynamic link libraries `libxxx.a`, to achieve cross-compilation. The main logic is to maintain the UE4 Windows project while copying the `libAirLib.a`, `libMavLinkCom.a`, and `librpc.a` files to the appropriate locations since they are required during the UE4 packaging process.
 
