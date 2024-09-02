@@ -59,8 +59,7 @@ To package the simulation software for Linux, you need to convert the `.uproject
    ```
    Open `Block.uproject` to let UE4 recompile it again on Windows. Then, copy `libMavLinkCom.a` to the `Block/Plugins/AirSim/Source/AirLib/deps/MavLinkCom/lib` directory.
 
-8. If you want to use this plugin, copy the `Plugins` folder to the directory at the same level as the `Content` folder within your project. After opening the `.uproject`, create a new C++ file (this will trigger UE4 to recompile the Plugins during the packaging process). Since the necessary dynamic link libraries have been added to the Plugins folder, packaging should proceed without issues.
-
+8. If you want to use this plugin, copy the `Plugins` folder to the directory at the same level as the `Content` folder within your project.**After opening the `.uproject`, create a new C++ file (this will trigger UE4 to recompile the Plugins during the packaging process)** . Since the necessary dynamic link libraries have been added to the Plugins folder, packaging should proceed without issues.
 
 
 
