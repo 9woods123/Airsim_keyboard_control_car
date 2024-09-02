@@ -2,7 +2,8 @@
 
 This project is based on [AirSim](https://microsoft.github.io/AirSim/), a popular drone simulation platform. The project is developed as a UE4 plugin, creating a GameMode to load the simulation game. However, Microsoft did not provide a simulation with both a car and an aircraft simultaneously. To better adapt to the simulation of target tracking algorithms, we conducted secondary development to create a multiplayer game that allows for simultaneous control of both aircraft and car models.
 
-## How to Get It
+## Develop UE game in Windows and Package game to Linux
+
 ### Windows
 
 Build AirSim#
@@ -60,15 +61,6 @@ To package the simulation software for Linux, you need to convert the `.uproject
 
 8. If you want to use this plugin, copy the `Plugins` folder to the directory at the same level as the `Content` folder within your project. After opening the `.uproject`, create a new C++ file (this will trigger UE4 to recompile the Plugins during the packaging process). Since the necessary dynamic link libraries have been added to the Plugins folder, packaging should proceed without issues.
 
-
-### Linux
-The current recommended and tested environment is Ubuntu 18.04 LTS. Theoretically, you can build on other distros as well, but we haven't tested it.
-We've two options - you can either build inside docker containers or your host machine.
-
-Build Unreal Engine#
-Make sure you are registered with Epic Games. This is required to get source code access for Unreal Engine.
-
-Clone Unreal in your favorite folder and build it (this may take a while!). Note: We only support Unreal >= 4.27 at present. We recommend using 4.27.
 
 # use ./build.sh --debug to build in debug mode
 # go to the folder where you clone GitHub projects
