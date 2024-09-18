@@ -133,7 +133,8 @@ public class AirSim : ModuleRules
     private bool AddLibDependency(string LibName, string LibPath, string LibFileName, ReadOnlyTargetRules Target, bool IsAddLibInclude)
     {
         string PlatformString = (Target.Platform == UnrealTargetPlatform.Win64 || Target.Platform == UnrealTargetPlatform.Mac) ? "x64" : "x86";
-        string ConfigurationString = (Target.Configuration == UnrealTargetConfiguration.Debug) ? "Debug" : "Release";
+        string ConfigurationString = (Target.Configuration == UnrealTargetConfiguration.Debug) ? "Debug" : 
+                                 (Target.Configuration == UnrealTargetConfiguration.Shipping) ? "Shipping" : "Release";
         bool isLibrarySupported = false;
 
 

@@ -45,7 +45,7 @@ To package the simulation software for Linux, you need to convert the `.uproject
    ```
    This will generate a `Block.uproject` that can be opened on Windows. Open the `.uproject` file to let UE4 recompile `Block.uproject`.
 
-5. Return to the AirSim directory and set up the Linux environment:
+5. In WSL ubuntu, return to the AirSim directory and set up the Linux environment:
    ```bash
    ./setup.sh  # Install dependencies for compiling AirSim on Linux
    ./build.sh  # Compile AirSim; this will create an AirSim uproject for Ubuntu
