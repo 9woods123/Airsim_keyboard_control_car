@@ -5,6 +5,19 @@ This project is based on [AirSim](https://microsoft.github.io/AirSim/), a popula
 
 # Control the car by keyboard W A S D. And control your multicopter by original interface provided by Microsoft.
 
+If you find our work useful we'd love to hear from you. If you use this repositorty as part of your research can you please cite the repository in your work:
+
+```
+@misc{Airsim_keyboard_control_car,
+  author = {Yu, Tianyou},
+  title = {Airsim\_keyboard\_control\_car},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/9woods123/Airsim_keyboard_control_car}}
+}
+ ```
+
 # Develop UE game in Windows and Package game to Linux
 
 ### Windows
@@ -89,16 +102,5 @@ The drone will be designated as Player 0, and the vehicle will be designated as 
     }
    ```
 
-# If you find our work useful we'd love to hear from you. If you use this repositorty as part of your research can you please cite the repository in your work:
 
-```
-@misc{Airsim_keyboard_control_car,
-  author = {Yu, Tianyou},
-  title = {Airsim\_keyboard\_control\_car},
-  year = {2024},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/9woods123/Airsim_keyboard_control_car}}
-}
- ```
 
