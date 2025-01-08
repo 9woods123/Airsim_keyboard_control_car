@@ -2,7 +2,7 @@
 
 This project is based on [AirSim](https://microsoft.github.io/AirSim/), a popular drone simulation platform. The project is developed as a UE4 plugin, creating a GameMode to load the simulation game. However, Microsoft did not provide a simulation with both a car and an aircraft simultaneously. To better adapt to the simulation of target tracking algorithms, we conducted secondary development to create a multiplayer game that allows for simultaneous control of both aircraft and car models.
 ![image](https://github.com/user-attachments/assets/cca87443-943e-4c83-b719-5c4b63c07b8f)
-control the car by keyboard W A S D。And control your multicopter by original interface provided by micosorft.
+control the car by keyboard W A S D。And control your multicopter by original interface provided by Microsoft.
 # Develop UE game in Windows and Package game to Linux
 
 ### Windows
