@@ -91,6 +91,7 @@ The drone will be designated as Player 0, and the vehicle will be designated as 
 
 # If you find our work useful we'd love to hear from you. If you use this repositorty as part of your research can you please cite the repository in your work:
 
+```
 @misc{Airsim_keyboard_control_car,
   author = {Yu, Tianyou},
   title = {Airsim\_keyboard\_control\_car},
@@ -99,4 +100,5 @@ The drone will be designated as Player 0, and the vehicle will be designated as 
   journal = {GitHub repository},
   howpublished = {\url{https://github.com/9woods123/Airsim_keyboard_control_car}}
 }
+ ```
 
